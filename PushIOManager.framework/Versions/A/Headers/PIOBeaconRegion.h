@@ -69,9 +69,8 @@
  @param iBeaconUUID     Proximity UUID of iBeacon.
  @param iBeaconMajor    Major value of iBeacon.
  @param iBeaconMinor    Minor value of iBeacon.
- @param iBeaconMajor    Beacon name.
- @param BeaconId        Beacon id.
- @param BeaconName      Beacon name.
+ @param beaconId        Beacon Id.
+ @param beaconName      Beacon name.
  @param beaconTag       Tag associated with beacon. Any useful information can be passed as a tag.
  @param proximity       Proximity value of Beacon - Immediate, Near, Far, Unknown.
  @param source          Specify from where region data is coming - Apple Native or Thirdparty sdk name.
@@ -87,8 +86,8 @@
  
  @param eddyStoneId1    UUID of EddyStone Beacon. If beacon is not eddystone use this for any other id purpose like            eddystoneurl.
  @param eddyStoneId2    Instance Id of EddyStone Beacon. If beacon is not eddystone use this for any other id purpose like eddystoneurl.
- @param BeaconId        Beacon id.
- @param BeaconName      Beacon name.
+ @param beaconId        Beacon Id.
+ @param beaconName      Beacon name.
  @param beaconTag       Tag associated with beacon. Any useful information can be passed as a tag.
  @param proximity       Proximity value of Beacon - Immediate, Near, Far, Unknown.
  @param source          Specify from where region data is coming - Apple Native or Thirdparty sdk name.

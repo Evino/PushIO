@@ -105,26 +105,6 @@ FOUNDATION_EXPORT NSString * const PIOMCRequestURL;
 
 @end
 
-
-/**
- @deprecated This method is deprecated starting from version 6.32.0
- @note Please use @code PIOLogLevel @endcode instead.
- 
- Help setting the logging level for PushIOManager - the default is "ERRORS_ONLY"
- 
- - PUSHIO_DEBUG_NONE:        disable debug.
- - PUSHIO_DEBUG_ERRORS_ONLY: debug error only.
- - PUSHIO_DEBUG_ACTIVITY:    debug activities.
- - PUSHIO_DEBUG_VERBOSE:     debug verbose.
- */
-__attribute__((deprecated)) typedef enum {
-    PUSHIO_DEBUG_NONE = 0,
-    PUSHIO_DEBUG_ERRORS_ONLY = 1,
-    PUSHIO_DEBUG_ACTIVITY = 2,
-    PUSHIO_DEBUG_VERBOSE = 3
-}PushIODebugLevel;
-
-
 /**
  Help setting the logging level for PushIOManager.
  
@@ -333,14 +313,6 @@ typedef NSDictionary* (^PIOGlobalPropertiesBlock)(NSDictionary *event);
  */
 @property (nonatomic, copy) PIOGlobalPropertiesBlock globalEventPropertiesBlock;
 
-
-/**
- @deprecated This method is deprecated starting from version 6.32.0
- @note Please use @code setLogLevel: @endcode instead.
- 
- debugLevel enable different stage of logging with possible values: PUSHIO_DEBUG_NONE, PUSHIO_DEBUG_ERRORS_ONLY,PUSHIO_DEBUG_ACTIVITY, PUSHIO_DEBUG_VERBOSE.
- */
-@property (nonatomic, assign) PushIODebugLevel debugLevel __attribute__((deprecated));
 
 /**
  @deprecated This method is deprecated starting from version 6.32.0
@@ -1066,7 +1038,7 @@ FOUNDATION_EXPORT NSString * const PIORequestedWebURLIsPubWebType;
  */
 -(void) userNotificationCenter:(UNUserNotificationCenter *)center
 didReceiveNotificationResponse:(UNNotificationResponse *)response
-         withCompletionHandler:(void(^)())completionHandler;
+         withCompletionHandler:(void(^)(void))completionHandler;
 
 
 /**
@@ -1083,6 +1055,9 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 
 
 /**
+ @deprecated This method is deprecated starting from version 6.40.1
+ @note Please use @code registerForNotificationAuthorizations: @endcode instead.
+
  Asks user to provide the permissions for provided notifications types i.e.: Sound/Badge/Alert types.
  If readyForRegistrationCompHandler is not set, then provided completionHandler is assigned to it, to let application have access when SDK receives deviceToken.
  
@@ -1091,15 +1066,17 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
  @param completionHandler callback with response for notification permission prompt.
  
  */
--(void) registerForNotificationTypes:(UIUserNotificationType)notificationType categories:(NSArray *)categories completionHandler:(PIOCompletionHandler)completionHandler;
+-(void) registerForNotificationTypes:(UIUserNotificationType)notificationType categories:(NSArray *)categories completionHandler:(PIOCompletionHandler)completionHandler __attribute__((deprecated));
 
 
 /**
+ @deprecated This method is deprecated starting from version 6.40.1
+ 
  Method to be invoked from the application delegate's `didRegisterUserNotificationSettings:` method.
  
  @param notificationSettings updated notification settings
  */
--(void) didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings;
+-(void) didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings __attribute__((deprecated));
 
 
 
@@ -1193,7 +1170,7 @@ Returns the status of MessageCenter enabled.
 /**
  Enable/Disable the in-app messages prefetch. If enabled, all the in-app messages are prefetch and stored in the SDK, and triggered from local storage. If disabled then in-app messages are not prefetched, so not available to be triggered for the event i.e.: $ExplicitAppOpen.
 
- @param enableInAppFetch TRUE to enable in-App messages prefetch, FALSE to disable it.
+ @param enableInAppMessageFetch TRUE to enable in-App messages prefetch, FALSE to disable it.
  */
 -(void) setInAppMessageFetchEnabled:(BOOL)enableInAppMessageFetch;
 

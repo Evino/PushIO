@@ -1,3 +1,8 @@
+* Tue Mar 12, 2019 - 6.40.1
+- Fixed framework warnings.
+- Removed the `debugLevel` log API. Please use `setLogLevel:` API instead.
+- Deprecated `registerForNotificationTypes:` and `didRegisterUserNotificationSettings:` APIs. Please use `registerForNotificationAuthorizations:` API instead.
+
 * Tue Feb 26, 2019 - 6.40.0
 - Added new APIs for maintaining sessions for push conversions.
 - Added APIs for tracking geofence and beacon events.
@@ -7,8 +12,7 @@
 
 * Mon October 29, 2018 - 6.39.0
 - inApp messages are fetched at every application launch.
-- UIWebView is replaced by WKWebView.
-- Fixed issues related to fetching of messages in the Message Center.
+- WebView is replaced by WebKit.
 
 * Mon August 27, 2018 - 6.38.0
 - Added SDK crash reporting feature.
