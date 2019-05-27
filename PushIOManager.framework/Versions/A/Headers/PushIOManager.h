@@ -449,6 +449,9 @@ FOUNDATION_EXPORT NSString * const PIORequestedWebURLIsPubWebType;
 
 
 /**
+ @deprecated This method is deprecated starting from version 6.41.0
+ @note Please use @code configureWithFileName: @endcode or @code configureWithAPIKey:(NSString *)apiKey accountToken:(NSString *)accountToken conversionUrl:(NSString *)conversionUrl riAppId:(NSString *)riAppId accountName:(NSString *)accountName  completionHandler:(PIOCompletionHandler)completionHandler: @endcode instead.
+
  Validates the key against the current configuration and makes SDK ready for registration for valid API-Key.
  
  @param apiKey       generated in RI portal and used to configure SDK.
@@ -457,10 +460,13 @@ FOUNDATION_EXPORT NSString * const PIORequestedWebURLIsPubWebType;
  
  @return TRUE if SDK configured successfully (or provided APIKey is valid), FALSE otherwise.
  */
-- (BOOL)configureWithAPIKey:(NSString *)apiKey accountToken:(NSString *)accountToken error:(NSError *__autoreleasing *)error;
+- (BOOL)configureWithAPIKey:(NSString *)apiKey accountToken:(NSString *)accountToken error:(NSError *__autoreleasing *)error __attribute__((deprecated));
 
 
 /**
+ @deprecated This method is deprecated starting from version 6.41.0
+ @note Please use @code configureWithFileName: @endcode or @code configureWithAPIKey:(NSString *)apiKey accountToken:(NSString *)accountToken conversionUrl:(NSString *)conversionUrl riAppId:(NSString *)riAppId accountName:(NSString *)accountName  completionHandler:(PIOCompletionHandler)completionHandler: @endcode instead.
+
  Configure the application and register with server, for given APIKey and AccountToken.
  
  @param apiKey       generated in RI portal and used to configure SDK.
@@ -469,7 +475,7 @@ FOUNDATION_EXPORT NSString * const PIORequestedWebURLIsPubWebType;
  
  @return TRUE if SDK configured successfully (or provided APIKey is valid), FALSE otherwise. Registration status communicated through completion handler.
  */
-- (BOOL)configureAndRegisterWithAPIKey:(NSString *)apiKey accountToken:(NSString *)accountToken completionHandler:(PIOCompletionHandler)completionHandler;
+- (BOOL)configureAndRegisterWithAPIKey:(NSString *)apiKey accountToken:(NSString *)accountToken completionHandler:(PIOCompletionHandler)completionHandler __attribute__((deprecated));
 
 
 /**-----------------------------------------------------------------------------
@@ -915,19 +921,25 @@ FOUNDATION_EXPORT NSString * const PIORequestedWebURLIsPubWebType;
 - (void)setOverrideAccountToken:(NSString *)overrideAccountToken __attribute__((deprecated));
 
 /**
+ @deprecated This method is deprecated starting from version 6.41.0
+ @note Please use @code configureWithFileName: @endcode or @code configureWithAPIKey:(NSString *)apiKey accountToken:(NSString *)accountToken conversionUrl:(NSString *)conversionUrl riAppId:(NSString *)riAppId accountName:(NSString *)accountName  completionHandler:(PIOCompletionHandler)completionHandler: @endcode instead.
+
  Copy the value of `conversionUrl` from config.json, and pass it in this method. It's better to provide coversionURL as part of setup, it will avoid drop-reporting.
 
  @param conversionURL URL value of `conversionUrl` from config.json.
  */
-- (void)setConversionURL:(NSURL *)conversionURL;
+- (void)setConversionURL:(NSURL *)conversionURL __attribute__((deprecated));
 
 
 /**
+ @deprecated This method is deprecated starting from version 6.41.0
+ @note Please use @code configureWithFileName: @endcode or @code configureWithAPIKey:(NSString *)apiKey accountToken:(NSString *)accountToken conversionUrl:(NSString *)conversionUrl riAppId:(NSString *)riAppId accountName:(NSString *)accountName  completionHandler:(PIOCompletionHandler)completionHandler: @endcode instead.
+
  Copy the value of `riAppId` from config.json, and pass it in this method. It's better to provide RIAppID as part of SDK setup, it will avoid drop-reporting.
 
  @param riAppID RIAppID value of `riAppId` from config.json
  */
-- (void)setRIAppID:(NSString *)riAppID;
+- (void)setRIAppID:(NSString *)riAppID __attribute__((deprecated));
 
 
 /**
@@ -1166,12 +1178,68 @@ Returns the status of MessageCenter enabled.
 - (BOOL)isCrashLoggingEnabled;
 
 
-
 /**
  Enable/Disable the in-app messages prefetch. If enabled, all the in-app messages are prefetch and stored in the SDK, and triggered from local storage. If disabled then in-app messages are not prefetched, so not available to be triggered for the event i.e.: $ExplicitAppOpen.
 
  @param enableInAppMessageFetch TRUE to enable in-App messages prefetch, FALSE to disable it.
  */
--(void) setInAppMessageFetchEnabled:(BOOL)enableInAppMessageFetch;
+- (void)setInAppMessageFetchEnabled:(BOOL)enableInAppMessageFetch;
+
+
+/**
+ Configures the SDK using the provided config json file name.
+
+ @param configFileName Name of the json config file. It is of the format - {account_name_}pushio_config.json
+ @param completionHandler Callback to notify the result of configuration.
+ */
+- (void)configureWithFileName:(NSString *)configFileName completionHandler:(PIOCompletionHandler)completionHandler;
+
+
+/**
+  Configures the Responsys SDK.
+ 
+  @param apiKey API Key provided by responsys platform.
+  @param accountToken Account token provided by responsys platform.
+  @param conversionUrl Conversion url for tracking Email-to-App conversions.
+  @param riAppId App ID as displayed in Responsys Interact Mobile App Console.
+  @param accountName Account name used for logging in to Responsys Interact portal
+  @param completionHandler Callback to notify the result of configuration.
+ */
+- (void)configureWithAPIKey:(NSString *)apiKey accountToken:(NSString *)accountToken conversionUrl:(NSString *)conversionUrl riAppId:(NSString *)riAppId accountName:(NSString *)accountName  completionHandler:(PIOCompletionHandler)completionHandler;
+
+
+/**
+ Removes all Message center messages. Use this api only switching the configurations  i.e with `configure` API's.
+ */
+- (void)clearMessageCenterMessages;
+
+
+/**
+ Removes all InApp messages. Use these api only switching the configurations i.e with `configure` API's
+ */
+- (void)clearInAppMessages;
+
+
+/**
+ Set the application badge count and also sync with server. In case of error while syncing badge count will not be set.
+ 
+ @param badgeCount count needed to set on app icon.
+ @param completionHandler Callback to notify when badge count set operation completes.
+ */
+- (void)setBadgeCount:(NSInteger)badgeCount completionHandler:(PIOCompletionHandler)completionHandler;
+
+/**
+ Reset the application badge count to 0 and also sync with server. In case of error while syncing badge count will not be reset. This api will remove the badge count icon from app icon.
+ 
+ @param completionHandler Callback to notify when reset badge count operation completes.
+ */
+- (void)resetBadgeCountWithCompletionHandler:(PIOCompletionHandler)completionHandler;
+
+/**
+ Return the current local badge count of app.
+ 
+ @return Return the badge count value.
+ */
+- (NSInteger)getBadgeCount;
 
 @end

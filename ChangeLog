@@ -1,3 +1,8 @@
+* Mon May 27, 2019 - 6.41
+- Added new APIs to manage badge icons for Message Center.
+- Added new APIs to allow the apps to switch between multiple Responsys accounts at runtime.
+- Fixed an issue where sometimes request was sent with no data.
+
 * Tue Mar 12, 2019 - 6.40.1
 - Fixed framework warnings.
 - Removed the `debugLevel` log API. Please use `setLogLevel:` API instead.
