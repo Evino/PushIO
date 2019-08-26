@@ -1242,4 +1242,28 @@ Returns the status of MessageCenter enabled.
  */
 - (NSInteger)getBadgeCount;
 
+/**
+ Checks if the push payload provided is sent by Responsys platform or not.
+ @param userInfo accepts the userinfo dictionary.
+
+ @return TRUE if push payload is sent by Responsys platform otherwise FALSE.
+ */
+- (BOOL)isResponsysPayload:(NSDictionary *)userInfo;
+
+/**
+ Checks if the push notification provided is sent by Responsys platform or not.
+ @param notification accepts the notification.
+
+ @return TRUE if push payload is sent by Responsys platform otherwise FALSE.
+ */
+- (BOOL)isResponsysNotificaton:(UNNotification *)notification;
+
+/**
+ Checks if the push notification response provided is sent by Responsys platform or not.
+ @param response accepts the notification response.
+ 
+ @return TRUE if push payload is sent by Responsys platform otherwise FALSE.
+ */
+- (BOOL)isResponsysNotificationResponse:(UNNotificationResponse *)response;
+
 @end
