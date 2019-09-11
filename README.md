@@ -4,6 +4,14 @@
 
 
 ## Release Notes
+
+### 6.42.1 - Critical Xcode 11 Bug Fix
+
+With the release of 6.42.1, we fixed a critical bug due to which App built with Xcode 11 and earlier version of PushIO SDKs(6.42.0 or below) were stopped getting push notifications on iOS 13 devices. The reason for this is that Xcode 11, breaks a common technique that apps and libraries like PushIO were using to generate push device token for the device. 
+
+If you are using Xcode 11 to build the apps then you **must** update the Responsys PushIO SDK version to 6.42.1 or later, so your apps continue to work with APNS and Responsys Platform. 
+ 
+ 
 ### Upgrading SDK to 6.39
 
 #### New API for In-App Messaging
