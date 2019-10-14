@@ -27,7 +27,9 @@
 <key>orcl_rsys_share</key><array><dict><key>identifier</key><string>share</string><key>title</key><string>SHARE</string><key>authorizationRequired</key><false/><key>destructive</key><false/><key>foreground</key><true/></dict></array>\
 <key>orcl_rsys_follow</key><array><dict><key>identifier</key><string>follow</string><key>title</key><string>FOLLOW</string><key>authorizationRequired</key><false/><key>destructive</key><false/><key>foreground</key><true/></dict></array>\
 <key>orcl_rsys_store</key><array><dict><key>identifier</key><string>store</string><key>title</key><string>GO TO STORE</string><key>authorizationRequired</key><false/><key>destructive</key><false/><key>foreground</key><true/></dict></array>\
-<key>orcl_rsys_store_follow</key><array><dict><key>identifier</key><string>store</string><key>title</key><string>GO TO STORE</string><key>authorizationRequired</key><false/><key>destructive</key><false/><key>foreground</key><true/></dict><dict><key>identifier</key><string>follow</string><key>title</key><string>FOLLOW</string><key>authorizationRequired</key><false/><key>destructive</key><false/><key>foreground</key><true/></dict></array></dict></plist>";
+<key>orcl_rsys_store_follow</key><array><dict><key>identifier</key><string>store</string><key>title</key><string>GO TO STORE</string><key>authorizationRequired</key><false/><key>destructive</key><false/><key>foreground</key><true/></dict><dict><key>identifier</key><string>follow</string><key>title</key><string>FOLLOW</string><key>authorizationRequired</key><false/><key>destructive</key><false/><key>foreground</key><true/></dict></array>\
+<key>orcl_rsys_carousel_push</key><array><dict><key>destructive</key><false/><key>title</key><string>Open In App</string><key>authorizationRequired</key><false/><key>identifier</key><string>open_app</string><key>foreground</key><false/></dict></array></dict></plist>";
+
 
 @interface PIONotificationCategories : NSObject
 

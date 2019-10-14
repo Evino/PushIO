@@ -1,4 +1,9 @@
-* Wed Sep 11, 2019 - 6.42.1
+* Mon Oct 14, 2019 - 6.43	
+- Added Image Carousel push notifications.
+- Added support for provisional authorisation.
+- Restricted Minimum Location Distance to 500m. If location APIs is used, only the distance which is more than 500m will be reported.
+
+* Wed Sep 10, 2019 - 6.42.1
 -  Fixed deviceToken format error when apps compiled with Xcode 11. This unannounced Xcode 11 change breaks a common technique that PushIO SDK was using to convert the device tokens to correct format. If you have built the apps with Xcode 11 you must update the Responsys PushIO SDK to 6.42.1 or later versions, so your apps continue to work with APNS and Responsys Platform.
 
 * Mon Aug 26, 2019 - 6.42
