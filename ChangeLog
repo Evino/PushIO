@@ -1,4 +1,7 @@
-* Mon Oct 14, 2019 - 6.43	
+* Mon Oct 21, 2019 - 6.43.1
+- Optimized SDK for improved app launch experience.
+
+* Mon Oct 14, 2019 - 6.43
 - Added Image Carousel push notifications.
 - Added support for provisional authorisation.
 - Restricted Minimum Location Distance to 500m. If location APIs is used, only the distance which is more than 500m will be reported.
