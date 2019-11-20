@@ -1,5 +1,5 @@
 * Mon Nov 18, 2019 - 6.43.2
-- Fixed crash, while tying to send registration in case of device token is unavailable leads to crash.
+- Fixed crash, while trying to send registration in case of device token is unavailable leads to crash.
 
 * Mon Oct 21, 2019 - 6.43.1
 - Optimized SDK for improved app launch experience.
