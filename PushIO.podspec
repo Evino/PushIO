@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.license           = { :type => "Commercial", :file => "LICENSE.txt" }
   s.author            = "Oracle"
   s.platform          = :ios
-  s.source            = { :git => "https://github.com/pushio/PushIOManager_iOS.git", :tag => s.version.to_s }
+  s.source            = { :git => "https://github.com/pushio/PushIOManager_iOS.git", :tag => "{s.version}" }
 
 
   s.vendored_frameworks = "PushIOManager.framework"
@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
   s.license           = { :type => "Commercial", :file => "LICENSE.txt" }
   s.author            = "Oracle"
   s.platform          = :ios
-  s.source            = { :git => "https://github.com/pushio/PushIOManager_iOS.git", :tag => s.version.to_s }
+  s.source            = { :git => "https://github.com/pushio/PushIOManager_iOS.git", :tag => "{s.version}" }
 
 
   s.vendored_frameworks = "PIOMediaAttachmentExtension.framework"
