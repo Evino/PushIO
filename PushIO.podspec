@@ -20,7 +20,7 @@ end
 
 Pod::Spec.new do |s|
   s.name              = "PushIOExtension"
-  s.version           = "6.43.2"
+  s.version           = "6.43.1"
   s.summary           = "Oracle Push Cloud Service SDK"
   s.homepage          = "https://github.com/pushio/PushIOManager_iOS"
   s.documentation_url = "https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCFB/index.html"
