@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name              = "PushIO"
+  s.name              = "PushIOExtension"
   s.version           = "6.43.2"
   s.summary           = "Oracle Push Cloud Service SDK"
   s.homepage          = "https://github.com/pushio/PushIOManager_iOS"
@@ -10,10 +10,8 @@ Pod::Spec.new do |s|
   s.source            = { :git => "https://github.com/Evino/PushIOManager_iOS.git", :tag => s.version.to_s }
 
 
-  s.vendored_frameworks = "PushIOManager.framework"
-  s.preserve_paths = "PushIOManager.framework"
+  s.vendored_frameworks = "PIOMediaAttachmentExtension.framework"
+  s.preserve_paths = "PIOMediaAttachmentExtension.framework"
 
-  s.framework  = "CoreLocation","WebKit","UserNotifications"
-  s.library = "sqlite3"
   s.requires_arc = true
 end
